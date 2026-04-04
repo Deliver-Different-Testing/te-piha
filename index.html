@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Te Piha — Guest Guide</title>
+<style>
+:root {
+  --bg: #0f1419;
+  --card: #1a2332;
+  --card2: #1e2a3a;
+  --accent: #3b9b8f;
+  --accent2: #e8a849;
+  --text: #e8e6e3;
+  --text2: #8899aa;
+  --text3: #556677;
+  --danger: #d4534b;
+  --success: #3b9b8f;
+  --radius: 16px;
+  --max-w: 480px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+}
+.app {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 16px 100px;
+  padding-top: env(safe-area-inset-top, 16px);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 32px 0 24px;
+}
+.header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header p {
+  color: var(--text2);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 20px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.section-header .icon {
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+.section-header .title {
+  flex: 1;
+}
+.section-header .title h2 {
+  font-size: 17px;
+  font-weight: 600;
+}
+.section-header .title p {
+  font-size: 13px;
+  color: var(--text2);
+}
+.section-header .chevron {
+  color: var(--text3);
+  transition: transform 0.3s;
+  font-size: 18px;
+}
+.section.open .chevron {
+  transform: rotate(90deg);
+}
+.section-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.section.open .section-body {
+  max-height: 2000px;
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 10px;
+}
+.card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card p, .card li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text2);
+}
+.card ul {
+  padding-left: 18px;
+}
+.card li { margin-bottom: 4px; }
+
+/* Info row */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.info-row:last-child { border-bottom: none; }
+.info-row .label {
+  font-size: 14px;
+  color: var(--text2);
+}
+.info-row .value {
+  font-size: 14px;
+  font-weight: 600;
+}
+.copy-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.copy-btn:active { opacity: 0.7; }
+
+/* Device controls */
+.device-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.device-card {
+  background: var(--card2);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+.device-card:active { transform: scale(0.97); }
+.device-card.active { border-color: var(--accent); background: rgba(59,155,143,0.1); }
+.device-card .dev-icon { font-size: 32px; margin-bottom: 8px; }
+.device-card .dev-name { font-size: 13px; font-weight: 600; }
+.device-card .dev-status { font-size: 11px; color: var(--text2); margin-top: 4px; }
+
+/* Quick actions */
+.quick-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.action-btn {
+  background: var(--card2);
+  color: var(--text);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  flex: 1;
+  min-width: 80px;
+  -webkit-tap-highlight-color: transparent;
+}
+.action-btn:active { opacity: 0.7; }
+.action-btn.active-btn {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Weather widget */
+.weather-widget {
+  background: linear-gradient(135deg, #1a3a4a, #1a2a3a);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.weather-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.weather-temp {
+  font-size: 48px;
+  font-weight: 200;
+}
+.weather-desc {
+  font-size: 14px;
+  color: var(--text2);
+  margin-top: 4px;
+}
+.weather-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-top: 16px;
+}
+.weather-detail {
+  text-align: center;
+}
+.weather-detail .wd-val { font-size: 16px; font-weight: 600; }
+.weather-detail .wd-label { font-size: 11px; color: var(--text3); }
+
+/* Emergency */
+.emergency-btn {
+  display: block;
+  width: 100%;
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  -webkit-tap-highlight-color: transparent;
+}
+.emergency-btn:active { opacity: 0.8; }
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  transition: all 0.3s;
+  pointer-events: none;
+  z-index: 100;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Bottom nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15,20,25,0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: center;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 8px 0;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 0;
+  color: var(--text3);
+  text-decoration: none;
+  font-size: 10px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-item.active { color: var(--accent); }
+.nav-item .nav-icon { font-size: 22px; }
+
+/* Pages */
+.page { display: none; }
+.page.active { display: block; }
+
+/* Surf conditions */
+.surf-card {
+  background: linear-gradient(135deg, #1a2a3a, #1a3040);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 10px;
+}
+.surf-main { display: flex; justify-content: space-between; align-items: center; }
+.surf-height { font-size: 36px; font-weight: 200; }
+.surf-label { font-size: 12px; color: var(--text2); }
+
+/* Map */
+.map-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: var(--text);
+  -webkit-tap-highlight-color: transparent;
+}
+.map-link:active { opacity: 0.7; }
+.map-link .ml-icon { font-size: 24px; }
+.map-link .ml-text { flex: 1; }
+.map-link .ml-text .ml-name { font-size: 14px; font-weight: 600; }
+.map-link .ml-text .ml-desc { font-size: 12px; color: var(--text2); }
+.map-link .ml-arrow { color: var(--text3); }
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- ===== HOME PAGE ===== -->
+<div class="page active" id="pageHome">
+  <div class="header">
+    <h1>🏖️ Te Piha</h1>
+    <p>Welcome to your beach retreat</p>
+  </div>
+
+  <!-- Weather -->
+  <div class="weather-widget" id="weatherWidget">
+    <div class="weather-main">
+      <div>
+        <div class="weather-temp" id="wxTemp">--°</div>
+        <div class="weather-desc" id="wxDesc">Loading weather...</div>
+      </div>
+      <div style="font-size:48px" id="wxIcon">🌤️</div>
+    </div>
+    <div class="weather-details">
+      <div class="weather-detail"><div class="wd-val" id="wxWind">--</div><div class="wd-label">Wind</div></div>
+      <div class="weather-detail"><div class="wd-val" id="wxHumidity">--</div><div class="wd-label">Humidity</div></div>
+      <div class="weather-detail"><div class="wd-val" id="wxRain">--</div><div class="wd-label">Rain</div></div>
+    </div>
+  </div>
+
+  <!-- Quick Access -->
+  <div class="section open">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="icon">📶</div>
+      <div class="title"><h2>WiFi</h2><p>Get connected</p></div>
+      <div class="chevron">›</div>
+    </div>
+    <div class="section-body">
+      <div class="card">
+        <div class="info-row">
+          <span class="label">Network</span>
+          <span class="value" id="wifiName">Te Piha</span>
+        </div>
+        <div class="info-row">
+          <span class="label">Password</span>
+          <span class="value" id="wifiPass">••••••••</span>
+          <button class="copy-btn" onclick="copyWifi()">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Check-in/out -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="icon">🔑</div>
+      <div class="title"><h2>Check-in & Check-out</h2><p>Arrival and departure info</p></div>
+      <div class="chevron">›</div>
+    </div>
+    <div class="section-body">
+      <div class="card">
+        <div class="info-row">
+          <span class="label">Check-in</span>
+          <span class="value">3:00 PM</span>
+        </div>
+        <div class="info-row">
+          <span class="label">Check-out</span>
+          <span class="value">10:00 AM</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>🔐 Door Access</h3>
+        <p>The front door uses a Yale smart lock. Your access code will be sent to you before arrival.</p>
+        <p style="margin-top:8px">Please make sure the door is locked when you leave the house.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- House Rules -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="icon">📋</div>
+      <div class="title"><h2>House Guide</h2><p>Rules and essentials</p></div>
+      <div class="chevron">›</div>
+    </div>
+    <div class="section-body">
+      <div class="card">
+        <h3>🏠 The Basics</h3>
+        <ul>
+          <li>No smoking inside the house</li>
+          <li>Please remove shoes at the door</li>
+          <li>Max occupancy: <strong>8 guests</strong></li>
+          <li>Quiet hours: 10pm – 7am</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🗑️ Before You Leave</h3>
+        <ul>
+          <li>Put all rubbish in the bins by the garage</li>
+          <li>Run the dishwasher if you've used dishes</li>
+          <li>Strip beds and leave linen in the laundry</li>
+          <li>Close all windows and lock all doors</li>
+          <li>Turn off all lights and AC units</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🔥 BBQ</h3>
+        <p>Gas BBQ is on the deck. Please turn off the gas bottle when finished. Cleaning brushes are in the outdoor cupboard.</p>
+      </div>
+      <div class="card">
+        <h3>🚿 Water</h3>
+        <p>The house is on tank water. Please be mindful of water usage — shorter showers are appreciated, especially in summer.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Devices -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="icon">🎛️</div>
+      <div class="title"><h2>Smart Home</h2><p>Control AC, music, curtains</p></div>
+      <div class="chevron">›</div>
+    </div>
+    <div class="section-body">
+      <div class="card">
+        <h3>❄️ Heat Pump / AC</h3>
+        <p>Controlled via anywAiR. There are units in the living room and master bedroom.</p>
+        <div class="quick-actions">
+          <button class="action-btn" onclick="showToast('Use the anywAiR remote on the wall')">Living Room</button>
+          <button class="action-btn" onclick="showToast('Use the anywAiR remote on the wall')">Bedroom</button>
+        </div>
+        <p style="margin-top:10px;font-size:12px;color:var(--text3)">Tip: Set to 21°C for comfortable sleeping. Please turn off when you leave.</p>
+      </div>
+      <div class="card">
+        <h3>🎵 Speakers</h3>
+        <p>BluOS multiroom speakers throughout the house. Use the <strong>BluOS</strong> app on your phone to play music.</p>
+        <p style="margin-top:8px;font-size:12px;color:var(--text3)">Download: search "BluOS" in App Store or Google Play. The speakers will appear on your local network.</p>
+      </div>
+      <div class="card">
+        <h3>🪟 Curtains & Sheers</h3>
+        <p>Motorized curtains and sheers can be controlled with the wall-mounted remotes in each room.</p>
+        <div class="quick-actions">
+          <button class="action-btn" onclick="showToast('Use wall remote — hold for 2 sec')">Open All</button>
+          <button class="action-btn" onclick="showToast('Use wall remote — hold for 2 sec')">Close All</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Local Area -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="icon">🗺️</div>
+      <div class="title"><h2>Piha & Surrounds</h2><p>Beach, walks, food</p></div>
+      <div class="chevron">›</div>
+    </div>
+    <div class="section-body">
+      <a class="map-link" href="https://maps.apple.com/?q=Piha+Beach" target="_blank">
+        <div class="ml-icon">🏖️</div>
+        <div class="ml-text"><div class="ml-name">Piha Beach</div><div class="ml-desc">Iconic black sand surf beach</div></div>
+        <div class="ml-arrow">›</div>
+      </a>
+      <a class="map-link" href="https://maps.apple.com/?q=Lion+Rock+Piha" target="_blank">
+        <div class="ml-icon">🦁</div>
+        <div class="ml-text"><div class="ml-name">Lion Rock</div><div class="ml-desc">15 min climb — stunning views</div></div>
+        <div class="ml-arrow">›</div>
+      </a>
+      <a class="map-link" href="https://maps.apple.com/?q=Kitekite+Falls+Piha" target="_blank">
+        <div class="ml-icon">💧</div>
+        <div class="ml-text"><div class="ml-name">Kitekite Falls</div><div class="ml-desc">40 min return walk through bush</div></div>
+        <div class="ml-arrow">›</div>
+      </a>
+      <a class="map-link" href="https://maps.apple.com/?q=Piha+Cafe" target="_blank">
+        <div class="ml-icon">☕</div>
+        <div class="ml-text"><div class="ml-name">Piha Café</div><div class="ml-desc">Coffee, cabinet food, good vibes</div></div>
+        <div class="ml-arrow">›</div>
+      </a>
+      <a class="map-link" href="https://maps.apple.com/?q=Piha+Store" target="_blank">
+        <div class="ml-icon">🛒</div>
+        <div class="ml-text"><div class="ml-name">Piha Store</div><div class="ml-desc">Essentials, dairy, takeaways</div></div>
+        <div class="ml-arrow">›</div>
+      </a>
+      <a class="map-link" href="https://maps.apple.com/?q=Karekare+Beach" target="_blank">
+        <div class="ml-icon">🌊</div>
+        <div class="ml-text"><div class="ml-name">Karekare Beach</div><div class="ml-desc">Quieter beach, 10 min drive south</div></div>
+        <div class="ml-arrow">›</div>
+      </a>
+      <div class="card" style="margin-top:6px">
+        <h3>⚠️ Beach Safety</h3>
+        <p>Piha has strong rips and currents. <strong>Always swim between the flags</strong> when lifeguards are on duty. Never swim alone. If caught in a rip, swim sideways (parallel to the beach).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Emergency -->
+  <div class="section open">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="icon">🆘</div>
+      <div class="title"><h2>Emergency & Contacts</h2><p>Important numbers</p></div>
+      <div class="chevron">›</div>
+    </div>
+    <div class="section-body">
+      <div class="card">
+        <div class="info-row">
+          <span class="label">Emergency</span>
+          <a href="tel:111" class="value" style="color:var(--danger);text-decoration:none">111</a>
+        </div>
+        <div class="info-row">
+          <span class="label">Host (Steve)</span>
+          <a href="tel:+6421932611" class="value" style="color:var(--accent);text-decoration:none">021 932 611</a>
+        </div>
+        <div class="info-row">
+          <span class="label">Piha Surf Lifesaving</span>
+          <a href="tel:+6498129353" class="value" style="color:var(--accent);text-decoration:none">09 812 9353</a>
+        </div>
+      </div>
+      <a href="tel:111" class="emergency-btn">🚨 Call Emergency (111)</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CONTROLS PAGE ===== -->
+<div class="page" id="pageControls">
+  <div class="header">
+    <h1>🎛️ Controls</h1>
+    <p>Manage house devices</p>
+  </div>
+
+  <div class="device-grid">
+    <div class="device-card" onclick="toggleDevice(this,'ac-living')">
+      <div class="dev-icon">❄️</div>
+      <div class="dev-name">Living Room AC</div>
+      <div class="dev-status">Off</div>
+    </div>
+    <div class="device-card" onclick="toggleDevice(this,'ac-bedroom')">
+      <div class="dev-icon">🛏️</div>
+      <div class="dev-name">Bedroom AC</div>
+      <div class="dev-status">Off</div>
+    </div>
+    <div class="device-card" onclick="toggleDevice(this,'curtains')">
+      <div class="dev-icon">🪟</div>
+      <div class="dev-name">Curtains</div>
+      <div class="dev-status">Closed</div>
+    </div>
+    <div class="device-card" onclick="toggleDevice(this,'sheers')">
+      <div class="dev-icon">🫧</div>
+      <div class="dev-name">Sheers</div>
+      <div class="dev-status">Closed</div>
+    </div>
+    <div class="device-card" onclick="toggleDevice(this,'music')">
+      <div class="dev-icon">🎵</div>
+      <div class="dev-name">Speakers</div>
+      <div class="dev-status">Idle</div>
+    </div>
+    <div class="device-card" onclick="showToast('Weather station — view only')">
+      <div class="dev-icon">🌡️</div>
+      <div class="dev-name">Weather</div>
+      <div class="dev-status" id="ctrlWxTemp">--°C</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>💡 How It Works</h3>
+    <p>Most devices use wall-mounted remotes or the relevant app. Tap a device above for instructions.</p>
+    <p style="margin-top:8px;font-size:12px;color:var(--text3)">
+      API integrations coming soon for direct control from this page.
+    </p>
+  </div>
+
+  <!-- Davis WeatherLink live data -->
+  <div class="card" id="weatherLiveCard" style="margin-top:10px">
+    <h3>🌤️ Live Weather (Davis Station)</h3>
+    <div id="davisData">
+      <p>Connect WeatherLink API to show live data from the on-site weather station.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== AREA PAGE ===== -->
+<div class="page" id="pageArea">
+  <div class="header">
+    <h1>🗺️ Explore</h1>
+    <p>Things to do around Piha</p>
+  </div>
+
+  <div class="surf-card">
+    <div class="surf-main">
+      <div>
+        <div class="surf-height" id="surfHeight">--m</div>
+        <div class="surf-label">Piha surf forecast</div>
+      </div>
+      <div style="font-size:40px">🏄</div>
+    </div>
+  </div>
+
+  <h3 style="margin:16px 0 10px;font-size:15px;color:var(--text2)">🥾 Walks & Hikes</h3>
+  <a class="map-link" href="https://maps.apple.com/?q=Kitekite+Falls+Piha" target="_blank">
+    <div class="ml-icon">💧</div>
+    <div class="ml-text"><div class="ml-name">Kitekite Falls</div><div class="ml-desc">40 min return • easy-moderate</div></div>
+    <div class="ml-arrow">›</div>
+  </a>
+  <a class="map-link" href="https://maps.apple.com/?q=Lion+Rock+Piha" target="_blank">
+    <div class="ml-icon">🦁</div>
+    <div class="ml-text"><div class="ml-name">Lion Rock Summit</div><div class="ml-desc">15 min up • panoramic views</div></div>
+    <div class="ml-arrow">›</div>
+  </a>
+  <a class="map-link" href="https://maps.apple.com/?q=Mercer+Bay+Loop+Walk" target="_blank">
+    <div class="ml-icon">🌿</div>
+    <div class="ml-text"><div class="ml-name">Mercer Bay Loop</div><div class="ml-desc">1 hr • coastal cliffs</div></div>
+    <div class="ml-arrow">›</div>
+  </a>
+  <a class="map-link" href="https://maps.apple.com/?q=Hillary+Trail+Waitakere" target="_blank">
+    <div class="ml-icon">🏔️</div>
+    <div class="ml-text"><div class="ml-name">Hillary Trail</div><div class="ml-desc">Multi-day • advanced tramping</div></div>
+    <div class="ml-arrow">›</div>
+  </a>
+
+  <h3 style="margin:20px 0 10px;font-size:15px;color:var(--text2)">🍽️ Food & Drink</h3>
+  <a class="map-link" href="https://maps.apple.com/?q=Piha+Cafe" target="_blank">
+    <div class="ml-icon">☕</div>
+    <div class="ml-text"><div class="ml-name">Piha Café</div><div class="ml-desc">Coffee, breakfast, lunch</div></div>
+    <div class="ml-arrow">›</div>
+  </a>
+  <a class="map-link" href="https://maps.apple.com/?q=Piha+RSA" target="_blank">
+    <div class="ml-icon">🍺</div>
+    <div class="ml-text"><div class="ml-name">Piha RSA</div><div class="ml-desc">Cold beers, pizza nights</div></div>
+    <div class="ml-arrow">›</div>
+  </a>
+  <a class="map-link" href="https://maps.apple.com/?q=Piha+Store" target="_blank">
+    <div class="ml-icon">🛒</div>
+    <div class="ml-text"><div class="ml-name">Piha Store</div><div class="ml-desc">Essentials, ice creams, pies</div></div>
+    <div class="ml-arrow">›</div>
+  </a>
+
+  <h3 style="margin:20px 0 10px;font-size:15px;color:var(--text2)">🏖️ Nearby Beaches</h3>
+  <a class="map-link" href="https://maps.apple.com/?q=Karekare+Beach" target="_blank">
+    <div class="ml-icon">🌊</div>
+    <div class="ml-text"><div class="ml-name">Karekare</div><div class="ml-desc">10 min drive • quiet, dramatic</div></div>
+    <div class="ml-arrow">›</div>
+  </a>
+  <a class="map-link" href="https://maps.apple.com/?q=Bethells+Beach+Te+Henga" target="_blank">
+    <div class="ml-icon">🐚</div>
+    <div class="ml-text"><div class="ml-name">Bethells / Te Henga</div><div class="ml-desc">20 min drive • dunes, lake</div></div>
+    <div class="ml-arrow">›</div>
+  </a>
+  <a class="map-link" href="https://maps.apple.com/?q=Muriwai+Beach+Auckland" target="_blank">
+    <div class="ml-icon">🦅</div>
+    <div class="ml-text"><div class="ml-name">Muriwai</div><div class="ml-desc">30 min drive • gannet colony</div></div>
+    <div class="ml-arrow">›</div>
+  </a>
+</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <div class="nav-item active" onclick="switchPage('Home')">
+    <div class="nav-icon">🏠</div>
+    <span>Home</span>
+  </div>
+  <div class="nav-item" onclick="switchPage('Controls')">
+    <div class="nav-icon">🎛️</div>
+    <span>Controls</span>
+  </div>
+  <div class="nav-item" onclick="switchPage('Area')">
+    <div class="nav-icon">🗺️</div>
+    <span>Explore</span>
+  </div>
+</nav>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+</div>
+
+<script>
+// --- CONFIG (Steve: update these) ---
+const CONFIG = {
+  wifiName: 'Te Piha',
+  wifiPassword: 'CHANGE_ME',  // Update with real password
+  hostPhone: '+6421932611',
+  // Davis WeatherLink API (if available)
+  davisApiKey: '',
+  davisStationId: '',
+};
+
+// --- NAV ---
+function switchPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page' + name).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach((n, i) => {
+    n.classList.toggle('active', n.textContent.trim() === name || 
+      (name === 'Home' && i === 0) || (name === 'Controls' && i === 1) || (name === 'Area' && i === 2));
+  });
+  window.scrollTo(0, 0);
+}
+
+// --- SECTIONS ---
+function toggleSection(header) {
+  header.parentElement.classList.toggle('open');
+}
+
+// --- COPY WIFI ---
+function copyWifi() {
+  const pw = CONFIG.wifiPassword;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(pw).then(() => showToast('Password copied! 📋'));
+  } else {
+    showToast(pw);
+  }
+}
+
+// --- DEVICES ---
+function toggleDevice(card, device) {
+  card.classList.toggle('active');
+  const status = card.querySelector('.dev-status');
+  const isOn = card.classList.contains('active');
+  
+  switch(device) {
+    case 'ac-living':
+    case 'ac-bedroom':
+      status.textContent = isOn ? 'Cooling 21°C' : 'Off';
+      showToast(isOn ? 'Use the anywAiR wall remote to set temperature' : 'AC off');
+      break;
+    case 'curtains':
+      status.textContent = isOn ? 'Open' : 'Closed';
+      showToast(isOn ? 'Opening curtains — use wall remote' : 'Closing curtains — use wall remote');
+      break;
+    case 'sheers':
+      status.textContent = isOn ? 'Open' : 'Closed';
+      showToast(isOn ? 'Opening sheers — use wall remote' : 'Closing sheers — use wall remote');
+      break;
+    case 'music':
+      status.textContent = isOn ? 'Playing' : 'Idle';
+      showToast(isOn ? 'Open BluOS app on your phone to play music' : 'Speakers idle');
+      break;
+  }
+}
+
+// --- TOAST ---
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// --- WEATHER (Open-Meteo, free, no API key) ---
+async function loadWeather() {
+  try {
+    // Piha coordinates: -36.9558, 174.4689
+    const r = await fetch('https://api.open-meteo.com/v1/forecast?latitude=-36.9558&longitude=174.4689&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code,precipitation&timezone=Pacific/Auckland');
+    const d = await r.json();
+    const c = d.current;
+    
+    document.getElementById('wxTemp').textContent = Math.round(c.temperature_2m) + '°';
+    document.getElementById('wxWind').textContent = Math.round(c.wind_speed_10m) + ' km/h';
+    document.getElementById('wxHumidity').textContent = c.relative_humidity_2m + '%';
+    document.getElementById('wxRain').textContent = c.precipitation + 'mm';
+    document.getElementById('ctrlWxTemp').textContent = Math.round(c.temperature_2m) + '°C';
+    
+    // Weather code to description + icon
+    const wx = weatherCodeMap(c.weather_code);
+    document.getElementById('wxDesc').textContent = wx.desc;
+    document.getElementById('wxIcon').textContent = wx.icon;
+  } catch(e) {
+    document.getElementById('wxDesc').textContent = 'Weather unavailable';
+  }
+}
+
+function weatherCodeMap(code) {
+  const map = {
+    0: { desc: 'Clear sky', icon: '☀️' },
+    1: { desc: 'Mainly clear', icon: '🌤️' },
+    2: { desc: 'Partly cloudy', icon: '⛅' },
+    3: { desc: 'Overcast', icon: '☁️' },
+    45: { desc: 'Fog', icon: '🌫️' },
+    48: { desc: 'Rime fog', icon: '🌫️' },
+    51: { desc: 'Light drizzle', icon: '🌦️' },
+    53: { desc: 'Moderate drizzle', icon: '🌦️' },
+    55: { desc: 'Dense drizzle', icon: '🌧️' },
+    61: { desc: 'Slight rain', icon: '🌦️' },
+    63: { desc: 'Moderate rain', icon: '🌧️' },
+    65: { desc: 'Heavy rain', icon: '🌧️' },
+    71: { desc: 'Slight snow', icon: '🌨️' },
+    73: { desc: 'Moderate snow', icon: '🌨️' },
+    75: { desc: 'Heavy snow', icon: '❄️' },
+    80: { desc: 'Rain showers', icon: '🌦️' },
+    81: { desc: 'Moderate showers', icon: '🌧️' },
+    82: { desc: 'Heavy showers', icon: '⛈️' },
+    95: { desc: 'Thunderstorm', icon: '⛈️' },
+    96: { desc: 'Thunderstorm + hail', icon: '⛈️' },
+    99: { desc: 'Severe thunderstorm', icon: '⛈️' },
+  };
+  return map[code] || { desc: 'Mixed conditions', icon: '🌤️' };
+}
+
+// --- INIT ---
+loadWeather();
+// Refresh weather every 15 min
+setInterval(loadWeather, 15 * 60 * 1000);
+</script>
+</body>
+</html>
