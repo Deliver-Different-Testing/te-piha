@@ -392,11 +392,11 @@ body {
     </div>
   </div>
 
-  <!-- Check-in / Lock -->
+  <!-- Arrival & Access -->
   <div class="section">
     <div class="section-header" onclick="toggleSection(this)">
       <div class="icon">🔑</div>
-      <div class="title"><h2>Arrival & Access</h2><p>Check-in, lock code, parking</p></div>
+      <div class="title"><h2>Arrival & Access</h2><p>Getting in, parking, keys</p></div>
       <div class="chevron">›</div>
     </div>
     <div class="section-body">
@@ -411,18 +411,46 @@ body {
         </div>
       </div>
       <div class="card">
-        <h3>🔐 Yale Smart Lock</h3>
-        <p>The front door has a Yale keypad lock. Your access code is <strong>your mobile number</strong> — the same number you provided when booking.</p>
-        <p style="margin-top:8px">Your code is active for your stay dates only.</p>
-        <p style="margin-top:8px;font-size:12px;color:var(--text3)">If you have any trouble, call Steve and he can unlock remotely.</p>
-        <!-- Add lock instruction photo -->
-        <!-- <img class="instruction-img" src="images/yale-lock.jpg" alt="Yale lock" onclick="openLightbox(this)"> -->
-        <!-- <p class="img-caption">Tap the keypad, enter your code, press ✓</p> -->
+        <h3>⛓️ Driveway</h3>
+        <p>There is a chain across the driveway. The padlock code is <strong>1934</strong>.</p>
+        <p style="margin-top:8px">Park anywhere in front of the house — just avoid the septic tank area.</p>
+        <!-- <img class="instruction-img" src="images/driveway.jpg" alt="Driveway" onclick="openLightbox(this)"> -->
       </div>
       <div class="card">
-        <h3>🚗 Parking</h3>
-        <p>Park in the driveway — space for 2 cars. Please don't block the garage.</p>
-        <!-- <img class="instruction-img" src="images/parking.jpg" alt="Parking" onclick="openLightbox(this)"> -->
+        <h3>🚪 Back Door (Yale Lock)</h3>
+        <p>You'll enter through the <strong>back door</strong> when you first arrive.</p>
+        <ol style="padding-left:18px;margin-top:8px">
+          <li style="color:var(--text2);line-height:1.6">Swipe your hand from the Yale logo down towards the door handle to wake the keypad</li>
+          <li style="color:var(--text2);line-height:1.6">Enter the <strong>last 6 digits of your phone number</strong></li>
+          <li style="color:var(--text2);line-height:1.6">Press ✓ to unlock</li>
+        </ol>
+        <!-- <img class="instruction-img" src="images/yale-swipe.jpg" alt="Yale swipe" onclick="openLightbox(this)"> -->
+        <!-- <p class="img-caption">Swipe down from the Yale logo</p> -->
+        <!-- <img class="instruction-img" src="images/yale-keypad.jpg" alt="Yale keypad" onclick="openLightbox(this)"> -->
+        <p style="margin-top:10px;font-size:12px;color:var(--text3)">Your code is active for your stay dates only. Any trouble? Call Steve.</p>
+      </div>
+      <div class="card">
+        <h3>🔔 Alarm</h3>
+        <p>The alarm pad is just inside the back door. Enter the <strong>last 4 digits of your phone number</strong>, then press Enter.</p>
+        <!-- <img class="instruction-img" src="images/alarm-pad.jpg" alt="Alarm pad" onclick="openLightbox(this)"> -->
+      </div>
+      <div class="card">
+        <h3>🔑 Keys (Pink & Black)</h3>
+        <p>On the key hook just inside the back door you'll find:</p>
+        <ul>
+          <li><strong>Pink key</strong> — unlocks the two doors downstairs + the laundry</li>
+          <li><strong>Black plastic key</strong> — unlocks the spa pool cover</li>
+        </ul>
+        <p style="margin-top:8px"><strong>Downstairs doors:</strong></p>
+        <ul>
+          <li>Left door → into the house (downstairs bedroom)</li>
+          <li>Right door → straight to the shower (perfect after the beach — rinse sand off under the outdoor shower first as the septic tank doesn't like sand)</li>
+        </ul>
+        <!-- <img class="instruction-img" src="images/keys-hook.jpg" alt="Key hook" onclick="openLightbox(this)"> -->
+      </div>
+      <div class="card">
+        <h3>🏠 Layout Tip</h3>
+        <p>Two bedrooms upstairs, one downstairs. Kitchen is upstairs. Bring your gear in through the back door and straight to the kitchen/bedrooms — the stairs are narrow and a bit steep, so it's easier than lugging bags up from below.</p>
       </div>
     </div>
   </div>
@@ -445,9 +473,17 @@ body {
         </ul>
       </div>
       <div class="card">
+        <h3>☕ Coffee Machine</h3>
+        <p>DeLonghi Magnifica Start — it's a bean-to-cup auto machine in the pantry. Just press the button for your drink: Espresso, Coffee, Long, or Doppio+. Steam wand on the left for milk.</p>
+        <img class="instruction-img" src="images/coffee-machine.jpg" alt="DeLonghi Magnifica Start" onclick="openLightbox(this)">
+        <p class="img-caption">DeLonghi Magnifica Start — in the pantry</p>
+        <p style="margin-top:8px">Mugs are in the drawer next to the fridge (below the bench).</p>
+        <img class="instruction-img" src="images/mugs-drawer.jpg" alt="Mugs drawer" onclick="openLightbox(this)">
+        <p class="img-caption">Mugs drawer — next to the fridge</p>
+      </div>
+      <div class="card">
         <h3>🍳 Kitchen</h3>
-        <p>Fully equipped kitchen. Dishwasher tablets under the sink. Coffee machine on the bench — pods in the drawer.</p>
-        <!-- <img class="instruction-img" src="images/kitchen.jpg" alt="Kitchen" onclick="openLightbox(this)"> -->
+        <p>Fully equipped kitchen with Miele oven and induction cooktop. Dishwasher tablets under the sink.</p>
       </div>
       <div class="card">
         <h3>🔥 BBQ</h3>
@@ -456,18 +492,25 @@ body {
       </div>
       <div class="card">
         <h3>♨️ Spa Pool</h3>
-        <p>The spa pool is on the deck with a locked cover. The key is on the hook just inside the back door.</p>
+        <p>Unlocked with the <strong>small black plastic key</strong> from the key hook.</p>
+        <p style="margin-top:8px;color:var(--danger);font-weight:600">⚠️ The spa pool is not fenced — it must be locked at ALL times when not in use. This is a requirement of the Building Act 2004.</p>
         <ul>
-          <li>Please replace and lock the cover after each use</li>
+          <li>Lock the cover immediately after each use</li>
           <li>Shower before using the spa</li>
-          <li>No glass near the spa — plastic cups only</li>
+          <li>No glass near the spa</li>
+          <li>Supervise children at all times</li>
         </ul>
         <!-- <img class="instruction-img" src="images/spa.jpg" alt="Spa pool" onclick="openLightbox(this)"> -->
       </div>
       <div class="card">
         <h3>👕 Laundry</h3>
-        <p>The laundry is in a separate building outside. The key is on the same hook just inside the back door (with the spa key).</p>
-        <p style="margin-top:8px;font-size:12px;color:var(--text3)">Washing machine and dryer available. Laundry powder is on the shelf.</p>
+        <p>External building — unlocked with the <strong>pink key</strong>. Inside you'll find:</p>
+        <ul>
+          <li>Washing machine and dryer</li>
+          <li><strong>Second fridge</strong> with ice maker (cubes, shards, and chilled water). The freezer also produces big clear ice cubes</li>
+          <li>Outdoor furniture cushions (please bring out when using, store back when done)</li>
+          <li>Cleaning products, brooms, and mops</li>
+        </ul>
         <!-- <img class="instruction-img" src="images/laundry.jpg" alt="Laundry" onclick="openLightbox(this)"> -->
       </div>
       <div class="card">
@@ -510,7 +553,7 @@ body {
       </div>
       <div class="card">
         <h3>🎵 Speakers</h3>
-        <p>Bluesound multiroom speakers throughout the house. Download the <strong>BluOS</strong> app on your phone — the speakers appear automatically on the WiFi.</p>
+        <p>Bluesound multiroom speakers throughout the house. Download the <strong>BluOS</strong> app — the speakers appear automatically on the WiFi. Play from Spotify, AirPlay, or the built-in streaming services.</p>
         <div class="quick-actions">
           <a class="action-btn" href="https://apps.apple.com/app/bluos-controller/id870367685" target="_blank" style="text-align:center;text-decoration:none;color:var(--text)">📱 iOS App</a>
           <a class="action-btn" href="https://play.google.com/store/apps/details?id=com.bluesound.blueoscontroller" target="_blank" style="text-align:center;text-decoration:none;color:var(--text)">🤖 Android</a>
