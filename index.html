@@ -548,10 +548,14 @@ body {
     <div class="section-body">
       <div class="card">
         <h3>❄️ Heat Pump / AC</h3>
-        <p>Controlled via the anywAiR wall remotes. Units in the living room and master bedroom.</p>
-        <p style="margin-top:8px;font-size:12px;color:var(--text3)">Tip: 21°C for comfortable sleeping. Please turn off when leaving the house.</p>
-        <!-- <img class="instruction-img" src="images/ac-remote.jpg" alt="AC remote" onclick="openLightbox(this)"> -->
-        <!-- <p class="img-caption">anywAiR wall controller</p> -->
+        <p>There is one central anywAiR wall controller just outside the kitchen.</p>
+        <img class="instruction-img" src="images/aircon-controller.jpg" alt="anywAiR controller" onclick="openLightbox(this)">
+        <p class="img-caption">anywAiR wall controller by the kitchen</p>
+        <div class="quick-actions">
+          <button class="action-btn" onclick="deviceTap(this,'ac-house')">Set to 21°C</button>
+          <button class="action-btn" onclick="deviceTap(this,'ac-off')">Turn Off</button>
+        </div>
+        <p style="margin-top:10px;font-size:12px;color:var(--text3)">Please turn off when leaving the house.</p>
       </div>
       <div class="card">
         <h3>🎵 Speakers</h3>
@@ -646,14 +650,9 @@ body {
   </div>
 
   <div class="device-grid">
-    <div class="device-card" onclick="deviceTap(this,'ac-living')">
+    <div class="device-card" onclick="deviceTap(this,'ac-house')">
       <div class="dev-icon">❄️</div>
-      <div class="dev-name">Living Room AC</div>
-      <div class="dev-status">Use wall remote</div>
-    </div>
-    <div class="device-card" onclick="deviceTap(this,'ac-bedroom')">
-      <div class="dev-icon">🛏️</div>
-      <div class="dev-name">Bedroom AC</div>
+      <div class="dev-name">House AC</div>
       <div class="dev-status">Use wall remote</div>
     </div>
     <div class="device-card" onclick="deviceTap(this,'curtains')">
@@ -681,7 +680,7 @@ body {
   <div class="card" style="margin-top:16px">
     <h3>💡 Quick Reference</h3>
     <ul>
-      <li><strong>AC:</strong> Wall-mounted anywAiR remotes in living room & bedroom</li>
+      <li><strong>AC:</strong> Wall-mounted anywAiR controller by the kitchen</li>
       <li><strong>Curtains/Sheers:</strong> Wall remotes — top=open, bottom=close</li>
       <li><strong>Speakers:</strong> Download BluOS app, speakers auto-appear on WiFi</li>
       <li><strong>Vacuum:</strong> Press button on dock to start a full clean</li>
@@ -821,8 +820,7 @@ function copyText(text, msg) {
 // --- DEVICES ---
 function deviceTap(card, device) {
   const tips = {
-    'ac-living': 'Use the anywAiR wall remote in the living room. Set to 21°C for comfort.',
-    'ac-bedroom': 'Use the anywAiR wall remote by the bedroom door.',
+    'ac-house': 'Use the anywAiR wall controller by the kitchen. Set to 21°C for comfort.',
     'curtains': 'Wall remote: Top=open, Bottom=close, Middle=favourite position.',
     'sheers': 'Wall remote: Top=open, Bottom=close, Middle=favourite position.',
     'music': 'Download the BluOS app — speakers appear on WiFi automatically.',
