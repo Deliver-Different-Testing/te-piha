@@ -425,6 +425,7 @@ body {
         <div class="info-row">
           <span class="label">Check-out</span>
           <span class="value">10:00 AM</span>
+        
         </div>
       </div>
       <div class="card">
@@ -513,7 +514,7 @@ body {
       </div>
       <div class="card">
         <h3>🔥 BBQ</h3>
-        <p>Gas BBQ on the deck. Please turn off the gas bottle when finished. Cleaning brushes in the outdoor cupboard.</p>
+        <p>Gas BBQ (Weber Family Q with half grill and half plate) is on the deck. Cleaning brush, spatula, and tongs are hanging on the front. Please turn off the gas bottle when finished.</p>
         <!-- <img class="instruction-img" src="images/bbq.jpg" alt="BBQ" onclick="openLightbox(this)"> -->
       </div>
       <div class="card">
@@ -530,12 +531,13 @@ body {
       </div>
       <div class="card">
         <h3>👕 Laundry</h3>
-        <p>External building — unlocked with the <strong>pink key</strong>. Inside you'll find:</p>
+        <p>Accessed from the deck by the spa — unlocked with the <strong>pink key</strong>. Inside you'll find:</p>
         <ul>
           <li>Washing machine and dryer (laundry powder goes in the left-hand side of the tray)</li>
           <li><strong>Second fridge</strong> with ice maker (cubes, shards, and chilled water). The freezer also produces big clear ice cubes</li>
           <li>Outdoor furniture cushions (please bring out when using, store back when done)</li>
           <li>Cleaning products, brooms, and mops</li>
+          <li>Cleaning wipes in the right-hand drawers</li>
         </ul>
         <img class="instruction-img" src="images/laundry-cushions.jpg" alt="Laundry with cushions" onclick="openLightbox(this)">
         <p class="img-caption">Outdoor cushions stored in the laundry</p>
@@ -651,7 +653,7 @@ body {
       </a>
       <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kitekite+Falls+Piha" target="_blank">
         <div class="ml-icon">💧</div>
-        <div class="ml-text"><div class="ml-name">Kitekite Falls</div><div class="ml-desc">40 min return walk through bush</div></div>
+        <div class="ml-text"><div class="ml-name">Kitekite Falls</div><div class="ml-desc">40 min return • easy-moderate</div></div>
         <div class="ml-arrow">›</div>
       </a>
       <p style="text-align:center;margin:12px 0;font-size:13px;color:var(--text3)">More in the Explore tab ↓</p>
@@ -721,6 +723,7 @@ body {
       <div class="dev-icon">🤖</div>
       <div class="dev-name">Vacuum</div>
       <div class="dev-status">Press dock button</div>
+    
     </div>
   </div>
 
@@ -851,10 +854,6 @@ function switchPage(name, idx) {
 }
 
 // --- SECTIONS ---
-function toggleSection(header) {
-  header.parentElement.classList.toggle('open');
-}
-
 function toggleSection(header) {
   if (document.getElementById('searchBar').value !== '') return; // Don't toggle if searching
   header.parentElement.classList.toggle('open');
