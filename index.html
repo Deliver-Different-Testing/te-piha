@@ -559,7 +559,8 @@ body {
       </div>
       <div class="card">
         <h3>🎵 Speakers</h3>
-        <p>Bluesound multiroom speakers throughout the house. Download the <strong>BluOS</strong> app — the speakers appear automatically on the WiFi. Play from Spotify, AirPlay, or the built-in streaming services.</p>
+        <p>Bluesound multiroom speakers throughout the house. To get started, download the <strong>BluOS</strong> app on your phone — the speakers should appear automatically on the WiFi.</p>
+        <p style="margin-top:8px">Once BluOS is running, you can often find the speakers directly within your **Spotify app** (via Spotify Connect) or use AirPlay.</p>
         <div class="quick-actions">
           <a class="action-btn" href="https://apps.apple.com/app/bluos-controller/id870367685" target="_blank" style="text-align:center;text-decoration:none;color:var(--text)">📱 iOS App</a>
           <a class="action-btn" href="https://play.google.com/store/apps/details?id=com.bluesound.blueoscontroller" target="_blank" style="text-align:center;text-decoration:none;color:var(--text)">🤖 Android</a>
@@ -572,12 +573,6 @@ body {
         <!-- <img class="instruction-img" src="images/curtain-remote.jpg" alt="Curtain remote" onclick="openLightbox(this)"> -->
       </div>
       <div class="card">
-        <h3>🤖 Robot Vacuum</h3>
-        <p>There's a Roborock vacuum that lives in the living area. You can run it anytime — just make sure the floor is clear of loose items first.</p>
-        <p style="margin-top:8px">Press the button on top to start, or use the <strong>Roborock</strong> app if you'd like more control.</p>
-        <!-- <img class="instruction-img" src="images/roborock.jpg" alt="Roborock vacuum" onclick="openLightbox(this)"> -->
-      </div>
-      <div class="card">
         <h3>🗣️ Amazon Alexa</h3>
         <p>Alexa smart speakers are throughout the house and control many of the lights, curtains, and sheers.</p>
         <p style="margin-top:8px">Try these commands:</p>
@@ -588,6 +583,12 @@ body {
           <li>"Alexa, set AC to 21 degrees" (if integrated)</li>
         </ul>
         <p style="margin-top:10px;font-size:12px;color:var(--text3)">Just say "Alexa" to get started.</p>
+      </div>
+      <div class="card">
+        <h3>🤖 Robot Vacuum</h3>
+        <p>There's a Roborock vacuum that lives in the living area. You can run it anytime — just make sure the floor is clear of loose items first.</p>
+        <p style="margin-top:8px">Press the button on top to start, or use the <strong>Roborock</strong> app if you'd like more control.</p>
+        <!-- <img class="instruction-img" src="images/roborock.jpg" alt="Roborock vacuum" onclick="openLightbox(this)"> -->
       </div>
       <div class="card">
         <h3>📹 Security Cameras</h3>
@@ -611,7 +612,7 @@ body {
       </a>
       <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Lion+Rock+Piha" target="_blank">
         <div class="ml-icon">🦁</div>
-        <div class="ml-text"><div class="ml-name">Lion Rock</div><div class="ml-desc">15 min climb — stunning views</div></div>
+        <div class="ml-text"><div class="ml-name">Lion Rock Summit</div><div class="ml-desc">15 min up • panoramic views</div></div>
         <div class="ml-arrow">›</div>
       </a>
       <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kitekite+Falls+Piha" target="_blank">
@@ -694,7 +695,7 @@ body {
     <ul>
       <li><strong>AC:</strong> Wall-mounted anywAiR controller by the kitchen</li>
       <li><strong>Curtains/Sheers:</strong> Wall remotes — top=open, bottom=close</li>
-      <li><strong>Speakers:</strong> Download BluOS app, speakers auto-appear on WiFi</li>
+      <li><strong>Speakers:</strong> Download BluOS app, speakers auto-appear on WiFi. Then use BluOS app, Spotify Connect, or AirPlay.</li>
       <li><strong>Vacuum:</strong> Press button on dock to start a full clean</li>
       <li><strong>Cameras:</strong> External only (driveway/entrance) — managed by host</li>
     </ul>
@@ -835,7 +836,7 @@ function deviceTap(card, device) {
     'ac-house': 'Use the anywAiR wall controller by the kitchen. Set to 21°C for comfort.',
     'curtains': 'Wall remote: Top=open, Bottom=close, Middle=favourite position.',
     'sheers': 'Wall remote: Top=open, Bottom=close, Middle=favourite position.',
-    'music': 'Download the BluOS app — speakers appear on WiFi automatically.',
+    'music': 'Download the BluOS app to configure speakers on the WiFi. Then use Spotify Connect, AirPlay, or the BluOS app for music playback.',
     'vacuum': 'Press the button on top of the Roborock dock to start cleaning.',
   };
   showToast(tips[device] || 'See instructions in Home tab');
