@@ -372,10 +372,15 @@ body {
       <div class="chevron">›</div>
     </div>
     <div class="section-body">
+      <div class="card" style="text-align:center">
+        <p style="font-size:14px;color:var(--text)">Scan this QR code to connect to the guest WiFi:</p>
+        <img class="instruction-img" src="images/wifi-qr-code.jpg" alt="WiFi QR Code" onclick="openLightbox(this)" style="max-width:200px;margin:16px auto;">
+        <p class="img-caption">Piha Wifi_Guest</p>
+      </div>
       <div class="card">
         <div class="info-row">
           <span class="label">Network</span>
-          <span class="value">Te Piha Guest</span>
+          <span class="value">Piha Wifi_Guest</span>
         </div>
         <div class="info-row">
           <span class="label">Password</span>
@@ -785,7 +790,7 @@ body {
 <script>
 // --- CONFIG (Steve: update these) ---
 const CONFIG = {
-  wifiPassword: 'CHANGE_ME',     // Guest network password
+  wifiPassword: 'TePiha2026',     // Guest network password
   hostPhone: '+6421932611',
 };
 
