@@ -779,7 +779,7 @@ body {
   </div>
 
   <!-- Emergency -->
-  <div class="section open">
+  <div class="section">
     <div class="section-header" onclick="toggleSection(this)">
       <div class="icon">🆘</div>
       <div class="title"><h2>Emergency & Contacts</h2><p>Important numbers</p></div>
@@ -953,14 +953,14 @@ function filterContent() {
   const homePage = document.getElementById('pageHome');
 
   if (query === '') {
-    // Restore original state and close all sections (except Weather/WiFi/Emergency)
+    // Restore original state and close all sections (except WiFi)
     homePage.innerHTML = ''; // Clear current sections
     allSections.forEach(section => {
       homePage.appendChild(section);
       section.classList.remove('open'); // Close all by default
       // Reopen specific sections
       const title = section.querySelector('.section-header h2').textContent;
-      if (title === 'WiFi' || title === 'Emergency') {
+      if (title === 'WiFi') {
         section.classList.add('open');
       }
     });
