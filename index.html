@@ -350,6 +350,63 @@ body {
 /* Pages */
 .page { display: none; }
 .page.active { display: block; }
+
+/* ===== Responsive: tablet ===== */
+@media (min-width: 768px) {
+  :root { --max-w: 720px; }
+  .app { padding: 0 24px 120px; }
+  .header { padding: 48px 0 28px; }
+  .header h1 { font-size: 44px; }
+  .header p { font-size: 16px; }
+  .hero-img { max-height: 360px; }
+  .bottom-nav { max-width: 720px; }
+  .device-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ===== Responsive: desktop ===== */
+@media (min-width: 1024px) {
+  :root { --max-w: 1080px; }
+  .app { padding: 0 32px 120px; }
+  .header { padding: 56px 0 32px; }
+  .header h1 { font-size: 52px; }
+  .hero-img { max-height: 460px; border-radius: 20px; }
+  .bottom-nav { max-width: 1080px; }
+  .device-grid { grid-template-columns: repeat(4, 1fr); }
+  .card p, .card li { font-size: 15px; }
+
+  /* Flow cards into two columns inside open sections */
+  .section.open .section-body {
+    column-count: 2;
+    column-gap: 16px;
+  }
+  .section.open .section-body > * {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 12px;
+  }
+  /* Keep these elements full-width across both columns */
+  .section.open .section-body > .emergency-btn,
+  .section.open .section-body > .device-grid {
+    column-span: all;
+    -webkit-column-span: all;
+  }
+
+  /* Subtle hover affordances for mouse users */
+  .section-header:hover .title h2 { color: var(--accent); }
+  .card:hover { background: var(--card2); }
+  .map-link:hover { background: var(--card2); }
+  .copy-btn:hover { opacity: 0.9; }
+  .action-btn:hover { background: rgba(59,155,143,0.15); }
+  .device-card:hover { border-color: rgba(59,155,143,0.4); }
+  .instruction-img:hover { opacity: 0.92; }
+}
+
+/* ===== Responsive: large desktop ===== */
+@media (min-width: 1440px) {
+  :root { --max-w: 1200px; }
+  .bottom-nav { max-width: 1200px; }
+}
 </style>
 </head>
 <body>
