@@ -810,49 +810,6 @@ body {
   </div>
 </div>
 
-<!-- ===== CONTROLS PAGE ===== -->
-<div class="page" id="pageControls">
-  <div class="header">
-    <h1>🎛️ Controls</h1>
-    <p>House devices</p>
-  </div>
-
-  <div class="device-grid">
-    <div class="device-card" onclick="deviceTap(this,'ac-house')">
-      <div class="dev-icon">❄️</div>
-      <div class="dev-name">House AC</div>
-      <div class="dev-status">Use wall remote</div>
-    </div>
-    <div class="device-card" onclick="deviceTap(this,'curtains')">
-      <div class="dev-icon">🪟</div>
-      <div class="dev-name">Curtains</div>
-      <div class="dev-status">Use wall remote</div>
-    </div>
-    <div class="device-card" onclick="deviceTap(this,'sheers')">
-      <div class="dev-icon">🫧</div>
-      <div class="dev-name">Sheers</div>
-      <div class="dev-status">Use wall remote</div>
-    </div>
-    <div class="device-card" onclick="deviceTap(this,'music')">
-      <div class="dev-icon">🎵</div>
-      <div class="dev-name">Speakers</div>
-      <div class="dev-status">Use BluOS app</div>
-    
-    </div>
-  </div>
-
-  <div class="card" style="margin-top:16px">
-    <h3>💡 Quick Reference</h3>
-    <ul>
-      <li><strong>AC:</strong> Wall-mounted anywAiR controller by the kitchen</li>
-      <li><strong>Curtains/Sheers:</strong> Wall remotes — top=open, bottom=close</li>
-      <li><strong>Speakers:</strong> Download BluOS app, speakers auto-appear on WiFi. Then use BluOS app, Spotify Connect, or AirPlay.</li>
-      <li><strong>Vacuum:</strong> Press button on dock to start a full clean</li>
-      <li><strong>Cameras:</strong> External only (driveway/entrance) — managed by host</li>
-    </ul>
-  </div>
-</div>
-
 <!-- ===== EXPLORE PAGE ===== -->
 <div class="page" id="pageArea">
   <div class="header">
@@ -946,10 +903,7 @@ body {
   <div class="nav-item active" onclick="switchPage('Home',0)">
     <div class="nav-icon">🏠</div><span>Home</span>
   </div>
-  <div class="nav-item" onclick="switchPage('Controls',1)">
-    <div class="nav-icon">🎛️</div><span>Controls</span>
-  </div>
-  <div class="nav-item" onclick="switchPage('Area',2)">
+  <div class="nav-item" onclick="switchPage('Area',1)">
     <div class="nav-icon">🗺️</div><span>Explore</span>
   </div>
 </nav>
@@ -1039,18 +993,6 @@ function copyText(text, msg) {
   } else {
     showToast(text);
   }
-}
-
-// --- DEVICES ---
-function deviceTap(card, device) {
-  const tips = {
-    'ac-house': 'Use the anywAiR wall controller by the kitchen. Set to 21°C for comfort.',
-    'curtains': 'Wall remote: Top=open, Bottom=close, Middle=favourite position.',
-    'sheers': 'Wall remote: Top=open, Bottom=close, Middle=favourite position.',
-    'music': 'Download the BluOS app to configure speakers on the WiFi. Then use Spotify Connect, AirPlay, or the BluOS app for music playback.',
-    'vacuum': 'Press the button on top of the Roborock dock to start cleaning.',
-  };
-  showToast(tips[device] || 'See instructions in Home tab');
 }
 
 // --- LIGHTBOX ---
