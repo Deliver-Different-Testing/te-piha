@@ -382,6 +382,23 @@ body {
 
   <input type="search" id="searchBar" class="search-bar" placeholder="Search for anything..." onkeyup="filterContent()">
 
+  <!-- Welcome -->
+  <div class="section open">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="icon">🌊</div>
+      <div class="title"><h2>Welcome</h2><p>Te Piha — our west coast haunt</p></div>
+      <div class="chevron">›</div>
+    </div>
+    <div class="section-body">
+      <div class="card">
+        <p>Welcome to our West Coast haunt. Steve grew up at Muriwai and Janette in Titirangi, so a west coast hang out was an inevitability.</p>
+        <p style="margin-top:8px">This welcome guide has been created to help you make the most of your stay and includes recommendations for walks, cafes and local activities, along with information about the house to ensure a comfortable visit.</p>
+        <p style="margin-top:8px">Please take a few moments to familiarise yourself with the house information and enjoy everything Piha and the beautiful west coast has to offer.</p>
+        <p style="margin-top:8px">We hope you have a wonderful stay.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- WiFi -->
   <div class="section open">
     <div class="section-header" onclick="toggleSection(this)">
@@ -476,7 +493,7 @@ body {
       </div>
       <div class="card">
         <h3>🏠 Layout Tip</h3>
-        <p>Two bedrooms upstairs, one downstairs. Kitchen is upstairs. Bring your gear in through the back door and straight to the kitchen/bedrooms — the stairs are narrow and a bit steep, so it's easier than lugging bags up from below.</p>
+        <p>There are two bedrooms upstairs and one downstairs. The kitchen is also upstairs. It's best to bring all your gear headed for upstairs in through the back door and straight into the kitchen/bedrooms. The stairs are narrow and a bit steep and it can be tricky carrying bags up and down.</p>
       </div>
     </div>
   </div>
@@ -490,91 +507,134 @@ body {
     </div>
     <div class="section-body">
       <div class="card">
-        <h3>🏠 The Basics</h3>
+        <h3>🏠 General</h3>
         <ul>
-          <li>No smoking or vaping inside the house</li>
-          <li>Please remove shoes at the door</li>
-          <li>Max occupancy: <strong>8 guests</strong></li>
-          <li>Quiet hours: 10pm – 7am</li>
+          <li>No smoking or vaping inside the house please.</li>
+          <li>To protect our beautiful new floors, we do not wear shoes inside and ask that you do the same.</li>
+          <li>No additional pets, additional guests, parties or loud noise late at night please.</li>
+          <li>There are books in the oak cabinet in the master bedroom. Please feel free to read any of them, but we'd appreciate it if you could leave them behind when you go!</li>
+          <li>There are board games in the cabinet under the TV.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>☕ Coffee Machine</h3>
-        <p>DeLonghi Magnifica Start — it's a bean-to-cup auto machine in the pantry. Just press the button for your drink: Espresso, Coffee, Long, or Doppio+. Steam wand on the left for milk.</p>
-        <img class="instruction-img" src="images/coffee-machine.jpg" alt="DeLonghi Magnifica Start" onclick="openLightbox(this)">
-        <p class="img-caption">DeLonghi Magnifica Start — in the pantry</p>
-        <p style="margin-top:8px">Mugs are in the drawer next to the fridge (below the bench).</p>
-        <img class="instruction-img" src="images/mugs-drawer.jpg" alt="Mugs drawer" onclick="openLightbox(this)">
-        <p class="img-caption">Mugs & spices drawer — next to the fridge</p>
+        <h3>☕ Espresso Machine</h3>
+        <p>There will likely be some beans in the machine, but bring your own whole beans or face the prices of the Piha Store!</p>
+        <p style="margin-top:8px">For steamed milk turn the <strong>top left hand knob to the left</strong>. Push the steam button once it's pressurised.</p>
+        <img class="instruction-img" src="images/coffee-machine.jpg" alt="Espresso machine" onclick="openLightbox(this)">
       </div>
       <div class="card">
-        <h3>🍳 Kitchen</h3>
-        <p>Fully equipped kitchen with Miele oven and induction cooktop. You're welcome to help yourselves to any oils, herbs, and spices in the pantry.</p>
-        <p style="margin-top:8px">Dish brushes and scourers are in the drawer directly under the sink.</p>
-        <img class="instruction-img" src="images/kitchen-sink-drawer.jpg" alt="Kitchen sink drawer" onclick="openLightbox(this)">
-        <p class="img-caption">Dishbrush and scourer under the sink</p>
-        <p style="margin-top:8px">Cleaning products are in the corner cupboard to the left of the sink.</p>
-        <img class="instruction-img" src="images/kitchen-cleaning-cupboard.jpg" alt="Kitchen cleaning cupboard" onclick="openLightbox(this)">
-        <p class="img-caption">Cleaning products in the corner cupboard</p>
-      </div>
-      <div class="card">
-        <h3>🔥 BBQ</h3>
-        <p>Gas BBQ (Weber Family Q with half grill and half plate) is on the deck. Cleaning brush, spatula, tongs, and BBQ cleaning wipes are hanging on the front. Please turn off the gas bottle when finished.</p>
-        <!-- <img class="instruction-img" src="images/bbq.jpg" alt="BBQ" onclick="openLightbox(this)"> -->
-      </div>
-      <div class="card">
-        <h3>♨️ Spa Pool</h3>
-        <p>Unlocked with the <strong>small black plastic key</strong> from the key hook.</p>
-        <p style="margin-top:8px;color:var(--danger);font-weight:600">⚠️ The spa pool is not fenced — it must be locked at ALL times when not in use. This is a requirement of the Building Act 2004.</p>
+        <h3>🍳 Kitchen / Dining / Lounge</h3>
         <ul>
-          <li>Lock the cover immediately after each use</li>
-          <li>Shower before using the spa</li>
-          <li>No glass near the spa</li>
-          <li>Supervise children at all times</li>
+          <li>Dishwashing suds / dishwasher detergent lives in the <strong>spinny corner cupboard</strong>.</li>
+          <li>Bin bags, dishbrushes and dishwashing gloves (yellow for small hands, pink for big) are <strong>under the sink</strong>.</li>
+          <li>Herbs and spices are in a hidden drawer <strong>between the fridge and the oven</strong>.</li>
+          <li>The dishwasher generally works well on an <strong>auto wash with extra dry</strong>.</li>
+          <li>Please <strong>don't put any painted glasses in the dishwasher</strong> or they'll end up like our red and clear ones — clear!</li>
+          <li>Please use coasters and placemats on the inside dining and coffee tables. Coasters and placemats are in the <strong>end drawer in the kitchen</strong>.</li>
+          <li>Please be careful when drawing the seaward curtains. It's best to move all the fabric past the hooks before pulling them closed, otherwise they can get caught.</li>
         </ul>
-        <!-- <img class="instruction-img" src="images/spa.jpg" alt="Spa pool" onclick="openLightbox(this)"> -->
+      </div>
+      <div class="card">
+        <h3>🚿 Water & Wastewater</h3>
+        <p>We are on tank water and have a septic tank. The tank water is treated and safe to drink. Please limit water use in spring and summer. It is $500 and often a couple of days' wait if you run the tank dry — and it doesn't taste as good!</p>
+        <p style="margin-top:8px">The septic tank only likes toilet paper and whatever comes out of you. Please try not to wash too much fat, sand or food scraps down the sinks / showers. You definitely don't want a septic tank emergency while you are here!</p>
+      </div>
+      <div class="card">
+        <h3>🛁 Bathrooms</h3>
+        <ul>
+          <li>The heated towel rails will be off when you arrive. Each has a switch beneath to turn them on.</li>
+          <li>Each bathroom has a hairdryer.</li>
+          <li>Please don't use our towels / flannels to remove makeup. Makeup remover wipes are provided.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🔌 Phone Charging</h3>
+        <ul>
+          <li>There are USB-C chargers in each bedroom and in the back of the kitchen pantry.</li>
+          <li>The downstairs bedroom has lamps with USB-A chargers as well.</li>
+          <li>Bring your cables!</li>
+        </ul>
       </div>
       <div class="card">
         <h3>👕 Laundry</h3>
-        <p>Accessed from the deck by the spa — unlocked with the <strong>pink key</strong>. Inside you'll find:</p>
+        <p>The pink key unlocks the laundry. Inside:</p>
         <ul>
-          <li>Washing machine and dryer (laundry powder goes in the left-hand side of the tray)</li>
-          <li><strong>Second fridge</strong> with ice maker (cubes, shards, and chilled water). The freezer also produces big clear ice cubes</li>
-          <li>Outdoor furniture cushions (please bring out when using, store back when done)</li>
-          <li>Cleaning products, brooms, and mops</li>
-          <li>Cleaning wipes in the right-hand drawers</li>
+          <li>Outdoor furniture cushions</li>
+          <li><strong>Second fridge</strong> with ice maker (cubes, shards and chilled water). Inside the freezer it also produces the big clear ice cubes.</li>
+          <li>Cleaning products, brooms and mops</li>
         </ul>
+        <p style="margin-top:8px">If you need to do laundry, there is clothes washing detergent under the laundry tub. Detergent goes in the <strong>left hand compartment</strong> of the tray.</p>
+        <p style="margin-top:8px"><strong>Hills rotary clothes line:</strong> behind the tank. The pole goes in the hole between the tank and the slide that has a black plastic cover over it. Unscrew that and then screw in the flange that is on the pole of the clothesline. The arms are held up in place by a cord. Unhook the cord and the arms will drop down. Push the flange that the arms attach to up to lock the arms in place. <strong>Pegs are in the broom cupboard in the laundry.</strong></p>
         <img class="instruction-img" src="images/laundry-cushions.jpg" alt="Laundry with cushions" onclick="openLightbox(this)">
         <p class="img-caption">Outdoor cushions stored in the laundry</p>
       </div>
       <div class="card">
-        <h3>🚿 Water</h3>
-        <p>The house is on tank water. Please be mindful of usage — shorter showers are appreciated, especially in summer.</p>
+        <h3>🌬️ Outdoors</h3>
+        <p>Cushions for the outdoor dining chairs, couch and loungers are in the laundry. If it has been windy, the chairs themselves might have blown around! Hopefully they haven't gone too far.</p>
+        <p style="margin-top:8px"><strong>There is a very high wind load here</strong> and sometimes squally gusts even on a still day. The outdoor umbrellas have stays that need to be installed to stop them damaging themselves.</p>
+        <p style="margin-top:8px;color:var(--danger);font-weight:600">⚠️ The umbrellas must come down when the windspeed hits 17 km/hr (you can see this inside on the weather station display).</p>
+      </div>
+      <div class="card">
+        <h3>♨️ Spa</h3>
+        <p>The small black plastic key unlocks the spa pool cover.</p>
+        <p style="margin-top:8px">Please shower off any sand under the outside shower (downstairs) before using the spa.</p>
+        <p style="margin-top:8px"><strong>Once every second use put a scoop of chlorine in when you get out.</strong> Chlorine is in the top of the broom closet in the laundry room.</p>
+        <p style="margin-top:8px;color:var(--danger);font-weight:600">⚠️ As the spa pool is not fenced, it must be locked at all times when it is not in use. This is a requirement of the Building Act 2004 to prevent drownings. Please make sure the spa pool is locked when you are not using it.</p>
+      </div>
+      <div class="card">
+        <h3>🔥 BBQ</h3>
+        <p>The BBQ plate fits in the laundry tub for cleaning and there are specific BBQ cleaning products in the right hand drawers in the laundry.</p>
       </div>
       <div class="card">
         <h3>🗑️ Rubbish & Recycling</h3>
-        <p>Bins are at the front south end of the house, at the end of the lower deck:</p>
-        <ul>
-          <li><strong>Green bin:</strong> Recycling (large bottom, yellow lid)</li>
-          <li><strong>Blue bin:</strong> General Rubbish (smaller, yellow lid)</li>
-        </ul>
-        <p style="margin-top:8px">Rubbish bags are in the drawer below the kitchen sink.</p>
-        <p style="margin-top:8px">Collection day is <strong>Monday</strong>.</p>
+        <p>Please separate out cardboard, paper, glass, cans, tins and plastics. They go in the recycling bin (the <strong>back bin in the kitchen</strong> is a recycling bin and there is a <strong>blue one beside the BBQ</strong>).</p>
+        <p style="margin-top:8px">When these are full please empty them into the recycling bin (the bigger of the two bins with a <strong>green bottom</strong>) beside the fish filleting bench to the right of the house downstairs.</p>
+        <p style="margin-top:8px">Rubbish goes into the smaller bin (<strong>blue bottom</strong>), also by the fish filleting bench.</p>
         <img class="instruction-img" src="images/rubbish-bins.jpg" alt="Rubbish and Recycling bins" onclick="openLightbox(this)">
-        <p class="img-caption">Rubbish bins at the front south end of the house</p>
       </div>
       <div class="card">
-        <h3>🧹 Before You Leave</h3>
+        <h3>🧹 Departure</h3>
+        <p>Please:</p>
         <ul>
-          <li>Run the dishwasher if you've used dishes</li>
-          <li>Strip beds and leave linen in the laundry</li>
-          <img class="instruction-img" src="images/washing-machine.jpg" alt="Washing machine in laundry" onclick="openLightbox(this)">
-          <p class="img-caption">Washing machine in the external laundry</p>
-          <li>Put all rubbish in the bins</li>
-          <li>Close all windows and lock all doors</li>
-          <li>Turn off lights and AC units</li>
-          <li>Run the Roborock vacuum (tap "Clean" on the dock or use the Controls tab)</li>
+          <li>put all rubbish and recycling in the downstairs bins before you leave</li>
+          <li>place the rubbish bin (or both bins) at the end of the driveway for collection</li>
+          <li>take all of your food with you</li>
+          <li>clean all of your dishes etc. and put away</li>
+          <li>strip the beds and leave the sheets in the laundry</li>
+          <li><strong>clean the BBQ. There is an extra $70 cleaning cost if this is left dirty</strong></li>
+          <li>draw all curtains</li>
+          <li>if you break something, please let us know</li>
+          <li>lock all doors and shut all windows</li>
+          <li>set the alarm by holding the "arm" button down for three seconds</li>
+          <li>padlock the chain across the driveway</li>
+          <li>drive safe and thanks for staying!</li>
         </ul>
+        <img class="instruction-img" src="images/washing-machine.jpg" alt="Washing machine in laundry" onclick="openLightbox(this)">
+        <p class="img-caption">Washing machine in the external laundry</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stereo & TV -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="icon">📺</div>
+      <div class="title"><h2>Stereo & TV</h2><p>Music & TV setup</p></div>
+      <div class="chevron">›</div>
+    </div>
+    <div class="section-body">
+      <div class="card">
+        <h3>🎵 Stereo</h3>
+        <p>There are speakers in the <strong>lounge and master bedroom</strong>. To use the stereo you'll need to download <strong>BluOS</strong>. Then you can just connect over bluetooth.</p>
+        <p style="margin-top:8px">There is a portable Bose bluetooth speaker that can be used outside or downstairs.</p>
+        <div class="quick-actions">
+          <a class="action-btn" href="https://apps.apple.com/nz/app/bluos-controller/id566668472" target="_blank" style="text-align:center;text-decoration:none;color:var(--text)">📱 iOS App</a>
+          <a class="action-btn" href="https://play.google.com/store/apps/details?id=com.lenbrook.sovi.bluesound" target="_blank" style="text-align:center;text-decoration:none;color:var(--text)">🤖 Android</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>📺 TV</h3>
+        <p>The TV should be on the XYZ network. You have <strong>Netflix and free TV</strong> available to you and can log on to whatever services you have subscriptions to.</p>
       </div>
     </div>
   </div>
@@ -583,57 +643,36 @@ body {
   <div class="section">
     <div class="section-header" onclick="toggleSection(this)">
       <div class="icon">🎛️</div>
-      <div class="title"><h2>Smart Home</h2><p>AC, music, curtains, vacuum</p></div>
+      <div class="title"><h2>Smart Home</h2><p>Curtains, heating, AC, security</p></div>
       <div class="chevron">›</div>
     </div>
     <div class="section-body">
       <div class="card">
-        <h3>❄️ Heat Pump / AC</h3>
-        <p>There is one central anywAiR wall controller just outside the kitchen.</p>
+        <h3>🪟 Master Bedroom Curtains</h3>
+        <p>These are electric. You can say:</p>
+        <ul>
+          <li>"Alexa open master curtain"</li>
+          <li>"Alexa close master curtain"</li>
+          <li>"Alexa pause master curtain"</li>
+          <li>"Alexa open master sheers"</li>
+          <li>"Alexa close master sheers"</li>
+          <li>"Alexa pause master sheers"</li>
+        </ul>
+        <p style="margin-top:8px">Failing all of that, if you give each curtain a brief pull, it will close / open as you need.</p>
+      </div>
+      <div class="card">
+        <h3>🔥 Underfloor Heating</h3>
+        <p>There is underfloor heating under the tiles downstairs, in the upstairs bathroom and in the master bedroom. <strong>We will turn this on for you if it is winter.</strong></p>
+      </div>
+      <div class="card">
+        <h3>❄️ Air Conditioning / Heating</h3>
+        <p>The upstairs bedrooms and the lounge have ducted air conditioning / heating. The controller is on the wall next to the kitchen. You enliven the screen with a button on the bottom. You can choose to heat / cool 1, 2 or 3 rooms.</p>
         <img class="instruction-img" src="images/aircon-controller.jpg" alt="anywAiR controller" onclick="openLightbox(this)">
         <p class="img-caption">anywAiR wall controller by the kitchen</p>
-        <div class="quick-actions">
-          <button class="action-btn" onclick="deviceTap(this,'ac-house')">Set to 21°C</button>
-          <button class="action-btn" onclick="deviceTap(this,'ac-off')">Turn Off</button>
-        </div>
-        <p style="margin-top:10px;font-size:12px;color:var(--text3)">Please turn off when leaving the house.</p>
       </div>
       <div class="card">
-        <h3>🎵 Speakers</h3>
-        <p>Bluesound multiroom speakers throughout the house. To get started, download the <strong>BluOS</strong> app on your phone — the speakers should appear automatically on the WiFi.</p>
-        <p style="margin-top:8px">Once BluOS is running, you can often find the speakers directly within your **Spotify app** (via Spotify Connect) or use AirPlay.</p>
-        <div class="quick-actions">
-          <a class="action-btn" href="https://apps.apple.com/nz/app/bluos-controller/id566668472" target="_blank" style="text-align:center;text-decoration:none;color:var(--text)">📱 iOS App</a>
-          <a class="action-btn" href="https://play.google.com/store/apps/details?id=com.lenbrook.sovi.bluesound" target="_blank" style="text-align:center;text-decoration:none;color:var(--text)">🤖 Android</a>
-        </div>
-      </div>
-      <div class="card">
-        <h3>🪟 Curtains & Sheers</h3>
-        <p>Motorized curtains and sheers — use the wall-mounted remotes in each room.</p>
-        <p style="margin-top:8px;font-size:12px;color:var(--text3)">Top button = open, bottom = close, middle = stop/favourite position.</p>
-        <!-- <img class="instruction-img" src="images/curtain-remote.jpg" alt="Curtain remote" onclick="openLightbox(this)"> -->
-      </div>
-      <div class="card">
-        <h3>🗣️ Amazon Alexa</h3>
-        <p>Alexa smart speakers are throughout the house and control many of the lights, curtains, and sheers.</p>
-        <p style="margin-top:8px">Try these commands:</p>
-        <ul>
-          <li>"Alexa, turn on Lounge Lamp"</li>
-          <li>"Alexa, open Master Curtain"</li>
-          <li>"Alexa, open Master Sheers"</li>
-          <li>"Alexa, set AC to 21 degrees" (if integrated)</li>
-        </ul>
-        <p style="margin-top:10px;font-size:12px;color:var(--text3)">Just say "Alexa" to get started.</p>
-      </div>
-      <div class="card">
-        <h3>🤖 Robot Vacuum</h3>
-        <p>There's a Roborock vacuum that lives in the living area. You can run it anytime — just make sure the floor is clear of loose items first.</p>
-        <p style="margin-top:8px">Press the button on top to start, or use the <strong>Roborock</strong> app if you'd like more control.</p>
-        <!-- <img class="instruction-img" src="images/roborock.jpg" alt="Roborock vacuum" onclick="openLightbox(this)"> -->
-      </div>
-      <div class="card">
-        <h3>📹 Security Cameras</h3>
-        <p>External cameras are active for property security. They cover the driveway and entrances only — <strong>no cameras inside the house</strong>.</p>
+        <h3>📹 Security</h3>
+        <p>We will turn off the camera on the back deck while you are here.</p>
       </div>
     </div>
   </div>
