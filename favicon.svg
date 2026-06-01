@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4c870"/>
+      <stop offset="0.55" stop-color="#e8a849"/>
+      <stop offset="1" stop-color="#d4534b"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a3a4a"/>
+      <stop offset="1" stop-color="#0f1419"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="url(#sky)"/>
+  <circle cx="46" cy="22" r="5.5" fill="#fff7d6" opacity="0.85"/>
+  <rect y="52" width="64" height="12" fill="url(#sea)"/>
+  <!-- Lion Rock silhouette: head peak on left, body hump on right -->
+  <path d="M 4 52
+           Q 8 50 11 44
+           Q 14 38 16 28
+           Q 17 18 18 12
+           Q 19 8 21 8
+           Q 23 9 24 14
+           Q 25 22 27 28
+           Q 29 32 32 30
+           Q 36 28 40 24
+           Q 44 22 48 26
+           Q 52 32 56 42
+           Q 59 48 62 52 Z"
+        fill="#0f1419"/>
+</svg>
